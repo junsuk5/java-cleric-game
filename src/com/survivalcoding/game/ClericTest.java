@@ -3,47 +3,49 @@ package com.survivalcoding.game;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import java.util.Random;
+
+import static org.junit.Assert.*;
 
 public class ClericTest {
     Cleric cleric;
+    Random random = new Random();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         cleric = new Cleric();
     }
 
     @Test
     public void selfAid() {
-        cleric.hp = 0;
-        cleric.selfAid();
-        assertEquals(100, cleric.hp);
+        for (int i = 0; i < 100; i++) {
+            cleric.mp = cleric.maxMp;
+            cleric.hp = random.nextInt(51);
+            cleric.selfAid();
+            assertEquals(cleric.maxHp, cleric.hp);
+        }
+
+        for (int i = 0; i < 100; i++) {
+            cleric.mp = 4;
+            int hp = random.nextInt(51);
+            cleric.hp = hp;
+            cleric.selfAid();
+            assertEquals(hp, cleric.hp);
+        }
     }
 
+    // 이전 mp 와
     @Test
     public void pray() {
-        int recoveryMp = 0;
+        for (int i = 0; i < 100; i++) {
+            int sec = random.nextInt(11);
+            int mp = random.nextInt(11);
 
-        cleric.mp = 0;
-        recoveryMp = cleric.pray(3);
-        assertEquals(0, cleric.mp);
-        assertEquals(0, recoveryMp);
+            cleric.mp = mp;
+            int recoveryMp = cleric.pray(sec);
 
-        cleric.mp = 4;
-        recoveryMp = cleric.pray(3);
-        assertEquals(4, cleric.mp);
-        assertEquals(0, recoveryMp);
-
-        cleric.mp = 5;
-        recoveryMp = cleric.pray(3);
-        assertTrue(8 <= cleric.mp && cleric.mp <= 10);
-        assertEquals(0, cleric.mp);
-        assertTrue(3 <= recoveryMp && recoveryMp <= 5);
-
-        cleric.mp = 10;
-        recoveryMp = cleric.pray(3);
-        assertEquals(10, cleric.mp);
-        assertEquals(0, recoveryMp);
+            assertTrue(cleric.mp <= cleric.maxMp);
+            assertEquals(mp + recoveryMp, cleric.mp);
+        }
     }
 }

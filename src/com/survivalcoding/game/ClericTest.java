@@ -38,7 +38,7 @@ public class ClericTest {
     @Test
     public void pray() {
         for (int i = 0; i < 100; i++) {
-            int sec = random.nextInt(11);
+            int sec = random.nextInt(10) + 1;
             int mp = random.nextInt(11);
 
             cleric.mp = mp;

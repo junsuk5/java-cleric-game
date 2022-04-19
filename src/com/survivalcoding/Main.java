@@ -1,11 +1,20 @@
 package com.survivalcoding;
 
+import com.survivalcoding.util.Calculator;
+
 import java.io.IOException;
 
 public class Main {
-
+    int i = 10;
 
     public static void main(String[] args) throws IOException {
+        Main main = new Main();
+
+        System.out.println(main.i);
+
+        Calculator calculator = new Calculator();
+        System.out.println(calculator.add(10, 10));
+
         // 십의 자리
         for (int j = 0; j < 6; j++) {
             // 일의 자리

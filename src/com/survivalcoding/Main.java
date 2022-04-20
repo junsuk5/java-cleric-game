@@ -13,7 +13,7 @@ public class Main {
         System.out.println(main.i);
 
         Calculator calculator = new Calculator();
-        System.out.println(calculator.add(10, 10));
+        System.out.println(Calculator.add(10, 10));
 
         // 십의 자리
         for (int j = 0; j < 6; j++) {

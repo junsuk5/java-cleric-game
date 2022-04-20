@@ -19,10 +19,10 @@ public class ClericTest {
     @Test
     public void selfAid() {
         for (int i = 0; i < 100; i++) {
-            cleric.mp = cleric.maxMp;
+            cleric.mp = Cleric.maxMp;
             cleric.hp = random.nextInt(51);
             cleric.selfAid();
-            assertEquals(cleric.maxHp, cleric.hp);
+            assertEquals(Cleric.maxHp, cleric.hp);
         }
 
         for (int i = 0; i < 100; i++) {
@@ -44,7 +44,7 @@ public class ClericTest {
             cleric.mp = mp;
             int recoveryMp = cleric.pray(sec);
 
-            assertTrue(cleric.mp <= cleric.maxMp);
+            assertTrue(cleric.mp <= Cleric.maxMp);
             assertEquals(mp + recoveryMp, cleric.mp);
         }
     }

@@ -1,11 +1,19 @@
 package com.survivalcoding.game;
 
 
+import com.survivalcoding.util.Calculator;
+
 // 게임 시스템 객체
 public class GameMain {
 
     public static void main(String[] args) {
         Hero.setRandomMoney();
+
+        Calculator.
+
+        Cleric cleric1 = new Cleric("우서", 100, 50);
+        Cleric cleric2 = new Cleric("우서", 100);
+        Cleric cleric3 = new Cleric("우서");
 
 
         Sword fireSword = new Sword();

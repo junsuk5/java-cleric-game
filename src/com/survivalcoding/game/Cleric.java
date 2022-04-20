@@ -4,11 +4,26 @@ import java.util.Random;
 
 public class Cleric {
 
-    final int maxHp = 50;
-    final int maxMp = 10;
+    static final int maxHp = 50;
+    static final int maxMp = 10;
 
-    int hp = maxHp;
-    int mp = maxMp;
+    String name;
+    int hp;
+    int mp;
+
+    Cleric(String name, int hp, int mp) {
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+    }
+
+    Cleric(String name, int hp) {
+        this(name, hp, maxMp);
+    }
+
+    Cleric(String name) {
+        this(name, maxHp, maxMp);
+    }
 
     void selfAid() {
         if (mp >= 5) {

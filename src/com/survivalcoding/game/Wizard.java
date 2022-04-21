@@ -6,10 +6,11 @@ public class Wizard {
     private int mp;
     private Wand wand;
 
-    public Wizard(String name, int hp, int mp) {
+    public Wizard(String name, int hp, int mp, Wand wand) {
         this.name = name;
         this.hp = hp;
         this.mp = mp;
+        this.wand = wand;
     }
 
     public String getName() {
@@ -57,8 +58,10 @@ public class Wizard {
     }
 
     void heal(Hero hero) {
-        int basePoint = 10;
-        int recoveryPoint = (int) (basePoint * wand.getPower());
-        hero.setHp(hero.getHp() + recoveryPoint);
+        if (wand != null) {
+            int basePoint = 10;
+            int recoveryPoint = (int) (basePoint * wand.getPower());
+            hero.setHp(hero.getHp() + recoveryPoint);
+        }
     }
 }

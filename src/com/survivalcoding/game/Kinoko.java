@@ -7,8 +7,7 @@ public class Kinoko {
     private int hp;
     private char suffix;
 
-    public Kinoko(int hp, char suffix) {
-        this.hp = hp;
+    public Kinoko(char suffix) {
         this.suffix = suffix;
     }
 
@@ -29,8 +28,10 @@ public class Kinoko {
     }
 
     // method, function
-    public void attack() {
-        int hp;
+    public void attack(Hero hero) {
+        System.out.println("버섯 " + suffix + "의 공격");
+        System.out.println("10의 데미지");
+        hero.setHp(hero.getHp() - 10);
     }
 
     public void run() {

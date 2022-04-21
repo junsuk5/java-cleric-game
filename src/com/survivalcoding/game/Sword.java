@@ -1,6 +1,27 @@
 package com.survivalcoding.game;
 
 public class Sword {
-    String name;
-    int damage;
+    private String name;
+    private int damage;
+
+    public Sword(String name, int damage) {
+        this.name = name;
+        this.damage = damage;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
 }

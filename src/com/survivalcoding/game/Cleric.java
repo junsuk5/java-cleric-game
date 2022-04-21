@@ -4,12 +4,14 @@ import java.util.Random;
 
 public class Cleric {
 
-    static final int maxHp = 50;
-    static final int maxMp = 10;
+    public static final int maxHp = 50;
+    public static final int maxMp = 10;
 
-    String name;
-    int hp;
-    int mp;
+    private String name;
+    private int hp;
+    private int mp;
+
+
 
     Cleric(String name, int hp, int mp) {
         this.name = name;
@@ -25,14 +27,42 @@ public class Cleric {
         this(name, maxHp, maxMp);
     }
 
-    void selfAid() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getMp() {
+        return mp;
+    }
+
+    public void setMp(int mp) {
+        this.mp = mp;
+    }
+
+    private void die() {
+        System.out.println("꽥!!");
+    }
+
+    public void selfAid() {
         if (mp >= 5) {
             mp -= 5;
             hp = maxHp;
         }
     }
 
-    int pray(int sec) {
+    public int pray(int sec) {
         int addMp = sec + new Random().nextInt(3);
 
         int beforeMp = mp;

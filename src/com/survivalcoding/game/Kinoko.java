@@ -1,22 +1,13 @@
 package com.survivalcoding.game;
 
-public class Kinoko {
+public class Kinoko extends Monster {
     // 멤버변수, field, 전역 변수, global variable, property
     private final int LEVEL = 10;
 
-    private int hp;
     private char suffix;
 
     public Kinoko(char suffix) {
         this.suffix = suffix;
-    }
-
-    public int getHp() {
-        return hp;
-    }
-
-    public void setHp(int hp) {
-        this.hp = hp;
     }
 
     public char getSuffix() {

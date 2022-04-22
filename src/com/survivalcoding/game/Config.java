@@ -1,9 +1,9 @@
 package com.survivalcoding.game;
 
-public class Config {
-    static final int hp = 100;
-    static final int windowX = 100;
-    static final int windowY = 200;
+public interface Config {
+    int hp = 100;
+    int windowX = 100;
+    int windowY = 200;
 
-    static int bagicColor = 2;
+    int bagicColor = 2;
 }

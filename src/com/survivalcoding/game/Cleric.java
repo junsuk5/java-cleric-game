@@ -2,7 +2,7 @@ package com.survivalcoding.game;
 
 import java.util.Random;
 
-public class Cleric {
+public class Cleric implements Life {
 
     public static final int maxHp = 50;
     public static final int maxMp = 10;

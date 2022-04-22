@@ -24,5 +24,5 @@ public abstract class Character {
         System.out.println(name + "은 도망쳤다");
     }
 
-    public abstract void attack(Kinoko kinoko);
+    public abstract void attack(Monster monster);
 }

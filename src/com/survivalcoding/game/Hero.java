@@ -4,7 +4,7 @@ public class Hero extends Character {
     private Sword sword;        // null
 
     // 생성자 (constructor)    : 인스턴스 생성 방법
-    Hero(String name) {
+    public Hero(String name) {
     }
 
     public Sword getSword() {
@@ -37,5 +37,13 @@ public class Hero extends Character {
         System.out.println("은 공격했다");
         System.out.println("적에게 5포인트 데미지!!");
     }
+
+    @Override
+    public String toString() {
+        return "Hero{" +
+                "sword=" + sword +
+                '}';
+    }
+
 
 }

@@ -11,7 +11,45 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) throws ParseException {
+        String text = "Hello";
 
+        // 시작 인덱스,
+        System.out.println(text.substring(0, 2));
+        System.out.println(text.substring(2, 5));
+        System.out.println(text.substring(1));
+
+        System.out.println(text.replace("ll", "XX"));
+
+        String s1 = "1, 2, 3";
+        String[] splited = s1.split(", ");
+        for (String s : splited) {
+            System.out.println(s);
+        }
+
+        System.out.println(text.toLowerCase());
+        System.out.println(text.toUpperCase());
+
+        System.out.println(text.indexOf("e"));  // 1
+        System.out.println(text.indexOf("l"));  // 2개 있을 때는 맨 앞에 꺼
+
+        System.out.println(text.isEmpty());     // length == 0
+        System.out.println(text.isBlank());     // 공백으로만 되어있는지
+
+        StringBuilder sb = new StringBuilder();
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++) {
+            sb.append("Java");
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("StringBuilder : " + (end - start) + "ms");
+
+        String result = "";
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000; i++) {
+            result += "Java";
+        }
+        end = System.currentTimeMillis();
+        System.out.println("String : " + (end - start) + "ms");
     }
 
     private static void 같음비교() {

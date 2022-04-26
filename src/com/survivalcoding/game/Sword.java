@@ -3,9 +3,6 @@ package com.survivalcoding.game;
 import java.util.Objects;
 
 public class Sword {
-    public static void main(String[] args) {
-
-    }
     private String name;
     private int damage;
 

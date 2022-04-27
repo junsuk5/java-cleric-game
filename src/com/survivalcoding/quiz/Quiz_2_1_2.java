@@ -5,13 +5,11 @@ public class Quiz_2_1_2 {
 
     }
 
-    public static String getPath(String path, String fileName) {
-        StringBuilder sb = new StringBuilder();
-        if (path.matches(".*\\\\$")) {
-            sb.append(path).append("\\").append(fileName);
-        } else {
-            sb.append(path).append(fileName);
+    public static String getPath(final String path, final String fileName) {
+        String result = path;
+        if (!path.endsWith("\\")) {
+            result = path + "\\";
         }
-        return sb.toString();
+        return result + fileName;
     }
 }

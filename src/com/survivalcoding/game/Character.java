@@ -1,5 +1,7 @@
 package com.survivalcoding.game;
 
+import java.util.Objects;
+
 public abstract class Character {
     private String name;
     private int hp;
@@ -25,4 +27,17 @@ public abstract class Character {
     }
 
     public abstract void attack(Monster monster);
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Character character = (Character) o;
+        return name.equals(character.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
 }

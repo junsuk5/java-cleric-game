@@ -1,10 +1,13 @@
 package com.survivalcoding.game;
 
+import java.util.Objects;
+
 public class Hero extends Character {
     private Sword sword;        // null
 
     // 생성자 (constructor)    : 인스턴스 생성 방법
     public Hero(String name) {
+        setName(name);
     }
 
     public Sword getSword() {
